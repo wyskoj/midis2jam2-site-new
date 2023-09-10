@@ -1,3 +1,108 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "ignorePatterns": [
+    "**/*.js",
+    "**/*.mjs"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:tailwindcss/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "import",
+    "@typescript-eslint",
+    "tailwindcss",
+    "tsdoc"
+  ],
+  "settings": {
+    "import/extensions": [
+      ".ts",
+      ".tsx"
+    ],
+    "import/ignore": [
+      "node_modules"
+    ],
+    "import/resolver": {
+      "typescript": true
+    }
+  },
+  "rules": {
+    "eqeqeq": [
+      "warn",
+      "always"
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 160,
+        "comments": 80,
+        "ignorePattern": "eslint-disable-next-line"
+      }
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "no-empty": [
+      "warn",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "import/no-unused-modules": [
+      "warn",
+      {
+        "unusedExports": true,
+        "src": [
+          "**/*.{ts,tsx}"
+        ],
+        "ignoreExports": [
+          "pages/**.tsx"
+        ]
+      }
+    ],
+    "@typescript-eslint/ban-types": [
+      "warn",
+      {
+        "types": {
+          "{}": false
+        },
+        "extendDefaults": true
+      }
+    ],
+    "@typescript-eslint/explicit-member-accessibility": "warn",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-misused-promises": [
+      "warn",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "@typescript-eslint/no-namespace": [
+      "warn",
+      {
+        "allowDeclarations": true
+      }
+    ],
+    "tailwindcss/classnames-order": [
+      "warn",
+      {
+        "officialSorting": true
+      }
+    ],
+    "tsdoc/syntax": "warn"
+  }
 }

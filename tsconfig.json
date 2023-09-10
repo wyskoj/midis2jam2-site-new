@@ -1,22 +1,30 @@
 {
+  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
     "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
+    "noEmit": true,
+    "allowJs": true,
+    "plugins": [{ "name": "next" }],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "lib": ["ESNext", "DOM"],
+    "target": "ES5",
     "incremental": true,
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["./*"]
     }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  }
 }
