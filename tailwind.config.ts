@@ -7,6 +7,9 @@ const config: Config = {
 		'./app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	theme: {
+		container: {
+			center: true,
+		},
 		extend: {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -21,6 +24,7 @@ const config: Config = {
 				'primary-surface-hover': '#D5E7D4',
 				'on-primary-surface': '#006E1C',
 				'container': '#1A1C19',
+				'container-1': '#242623',
 			},
 		},
 	},
