@@ -11,9 +11,19 @@ ul {
     margin-left: 1.5rem;
 }
 
+ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+}
+
 .markdown-styles > h1 {
     font-weight: 900;
-    font-size: 1.25rem;
+    font-size: 2rem;
+}
+
+.markdown-styles > h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 td, th {
@@ -22,4 +32,11 @@ td, th {
 
 tr {
     border-bottom: 1px solid #333;
+}
+
+code {
+    background-color: #333;
+    color: #fff;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
 }

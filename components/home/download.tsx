@@ -81,3 +81,16 @@ export default function Download(props: {
 		</div>
 	);
 }
+
+export function DownloadSkeleton() {
+	return (
+		<div className={'container animate-pulse py-16'}>
+			<div className={'flex w-full space-x-8'}>
+				<div className="h-32 bg-slate-700 rounded grow"></div>
+				<div className="h-32 bg-slate-700 rounded grow"></div>
+				<div className="h-32 bg-slate-700 rounded grow"></div>
+			</div>
+			<div className={'h-64 w-full bg-slate-700 rounded mt-8 grow'}></div>
+		</div>
+	);
+}

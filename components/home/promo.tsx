@@ -127,7 +127,11 @@ export default function Promo() {
 		<div className={'space-y-24 py-16 bg-container'}>
 			{promoRows.map((it, i) => {
 				// Alternate row direction
-				return <PromoRow {...it} key={i} reversed={i % 2 !== 0} />;
+				return (
+					<PromoRow {...it} key={i} reversed={i % 2 !== 0}>
+						{it.children}
+					</PromoRow>
+				);
 			})}
 		</div>
 	);

@@ -7,7 +7,7 @@ export default function Badge(props: {
 }) {
 	return (
 		<span className={`${props.color} px-4 py-1 inline-block rounded-full mb-1`}>
-			{props.icon({ className: 'inline-block mr-1' })}
+			{props.icon({ className: 'inline-block mr-1 mb-1' })}
 			{props.text}
 		</span>
 	);
