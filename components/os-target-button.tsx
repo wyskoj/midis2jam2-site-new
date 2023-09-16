@@ -7,14 +7,14 @@ import { IconType } from 'react-icons';
 export default function OsTargetButton(props: {
 	icon: IconType;
 	name: string;
-	url: string;
+	url: string | undefined;
 }) {
 	return (
 		<MdButton rounded={'rounded-xl w-full m-auto'}>
 			<a
 				href={props.url}
 				className={
-					'flex h-24 flex-col items-center justify-center space-y-2 grow m-auto'
+					'm-auto flex h-24 grow flex-col items-center justify-center space-y-2'
 				}
 			>
 				<props.icon size={48} />

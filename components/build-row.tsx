@@ -1,3 +1,4 @@
+import { Build } from '@/pages/builds';
 import React from 'react';
 
 export type BuildRowProps = {
@@ -5,7 +6,7 @@ export type BuildRowProps = {
 	badge: React.JSX.Element | undefined;
 	color: string | undefined;
 	link?: React.JSX.Element;
-	build: any;
+	build: Build;
 };
 
 export default function BuildRow({
@@ -15,7 +16,7 @@ export default function BuildRow({
 	build,
 	link,
 }: BuildRowProps) {
-	const { commitId, message, committed } = build;
+	const { commitId, message, finished } = build;
 	const commitURL = `https://github.com/wyskoj/midis2jam2/commit/${commitId}`;
 	const shortCommitId = commitId.substring(0, 7);
 
@@ -35,7 +36,7 @@ export default function BuildRow({
 					<span>{message}</span>
 				</>
 			</td>
-			<td>{committed}</td>
+			<td>{finished}</td>
 			<td>{link || ''}</td>
 		</tr>
 	);

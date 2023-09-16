@@ -6,11 +6,11 @@ export default function Footer() {
 		<footer className="bg-container text-gray-400 ">
 			<div
 				className={
-					'flex flex-col md:flex-row-reverse space-y-8 items-center container px-4 py-8'
+					'container flex flex-col items-center space-y-8 px-4 py-8 md:flex-row-reverse'
 				}
 			>
-				<div className={'text-sm text-center md:w-1/2'}>
-					<WideLogo className={'w-full m-auto'} />
+				<div className={'text-center text-sm md:w-1/2'}>
+					<WideLogo className={'m-auto w-full'} />
 					<p className={'font-medium'}>
 						A remaster of MIDIJam, a 3D MIDI file visualizer.
 					</p>
@@ -25,7 +25,7 @@ export default function Footer() {
 						<Link href={'https://discord.gg/HD6KFQ2zkW'} text={'Discord'} />
 					</p>
 				</div>
-				<div className={'text-xs text-center md:text-left  md:w-1/2'}>
+				<div className={'text-center text-xs md:w-1/2  md:text-left'}>
 					<p>
 						Site &copy; MMXXI–MMXXIII{' '}
 						<Link href={'https://wysko.org'} text={'Jacob Wysko'} />. All Rights

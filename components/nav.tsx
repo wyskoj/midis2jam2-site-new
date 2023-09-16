@@ -7,11 +7,13 @@ export default function Nav(props: NavProps) {
 		<nav
 			className={`${
 				props.onIndexPage ? 'absolute top-4' : ''
-			} flex w-full flex-col content-between items-center justify-between space-y-4 lg:space-y-0 px-32 text-white lg:flex-row pt-4`}
+			} flex w-full flex-col content-between items-center justify-between space-y-4 px-32 pt-4 text-white lg:flex-row lg:space-y-0`}
 		>
 			<a href={'/'}>Home</a>
 			<a href={'/builds'}>Builds</a>
-			<WideLogo className={'max-w-[90vw]'} />
+			<a href={'/'}>
+				<WideLogo className={'max-w-[90vw]'} />
+			</a>
 			<a href={'https://github.com/wyskoj/midis2jam2'} target={'_blank'}>
 				Source
 			</a>

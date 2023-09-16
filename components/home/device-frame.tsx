@@ -6,8 +6,8 @@ export default function DeviceFrame() {
 	return (
 		<div className={'bg-container'}>
 			<div className={'container'}>
-				<div className={'flex flex-col lg:flex-row py-32 gap-y-16 px-4'}>
-					<div className={'flex lg:w-1/2 justify-end'}>
+				<div className={'flex flex-col gap-y-16 px-4 py-32 lg:flex-row'}>
+					<div className={'flex justify-end lg:w-1/2'}>
 						<Image
 							src={DeviceFrameImg}
 							alt={'midis2jam2 on a computer screen'}
@@ -17,17 +17,17 @@ export default function DeviceFrame() {
 					</div>
 					<div
 						className={
-							'lg:w-1/2 flex flex-col justify-center text-white space-y-8'
+							'flex flex-col justify-center space-y-8 text-white lg:w-1/2'
 						}
 					>
 						<h2
-							className={`font-black text-3xl md:text-5xl ${sora.className} text-center lg:text-left`}
+							className={`text-3xl font-black md:text-5xl ${sora.className} text-center lg:text-left`}
 						>
 							MIDIJam for the modern computer.
 						</h2>
 						<p
 							className={
-								'text-xl md:text-3xl font-medium md:leading-10 text-center lg:text-left'
+								'text-center text-xl font-medium md:text-3xl md:leading-10 lg:text-left'
 							}
 						>
 							Feature rich, easy to use, and free. midis2jam2 is the best way to

@@ -70,7 +70,8 @@
           "**/*.{ts,tsx}"
         ],
         "ignoreExports": [
-          "pages/**.tsx"
+          "pages/**.tsx",
+          "pages/api/**.ts"
         ]
       }
     ],

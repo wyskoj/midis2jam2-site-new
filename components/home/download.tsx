@@ -13,7 +13,7 @@ export default function Download(props: {
 	const markdown = props.release.body.split('\r\n').slice(4).join('\n');
 
 	return (
-		<div className={'container space-y-4 py-8 text-center text-white px-4'}>
+		<div className={'container space-y-4 px-4 py-8 text-center text-white'}>
 			<div>
 				<h2 className={`text-3xl font-extrabold uppercase ${sora.className}`}>
 					Download
@@ -25,23 +25,23 @@ export default function Download(props: {
 			</div>
 			<div
 				className={
-					'flex flex-col sm:flex-row max-w-2xl m-auto justify-center sm:space-x-4'
+					'm-auto flex max-w-2xl flex-col justify-center sm:flex-row sm:space-x-4'
 				}
 			>
 				<OsTargetButton
 					icon={SiWindows11}
 					name={'Windows'}
-					url={props.downloadUrls.find(it => it.os === 'windows')!!.url}
+					url={props.downloadUrls.find(it => it.os === 'windows')?.url}
 				/>
 				<OsTargetButton
 					icon={SiApple}
 					name={'macOS'}
-					url={props.downloadUrls.find(it => it.os === 'macos')!!.url}
+					url={props.downloadUrls.find(it => it.os === 'macos')?.url}
 				/>
 				<OsTargetButton
 					icon={SiLinux}
 					name={'Linux'}
-					url={props.downloadUrls.find(it => it.os === 'unix')!!.url}
+					url={props.downloadUrls.find(it => it.os === 'unix')?.url}
 				/>
 			</div>
 			<p>
@@ -86,11 +86,11 @@ export function DownloadSkeleton() {
 	return (
 		<div className={'container animate-pulse py-16'}>
 			<div className={'flex w-full space-x-8'}>
-				<div className="h-32 bg-slate-700 rounded grow"></div>
-				<div className="h-32 bg-slate-700 rounded grow"></div>
-				<div className="h-32 bg-slate-700 rounded grow"></div>
+				<div className="h-32 grow rounded bg-slate-700"></div>
+				<div className="h-32 grow rounded bg-slate-700"></div>
+				<div className="h-32 grow rounded bg-slate-700"></div>
 			</div>
-			<div className={'h-64 w-full bg-slate-700 rounded mt-8 grow'}></div>
+			<div className={'mt-8 h-64 w-full grow rounded bg-slate-700'}></div>
 		</div>
 	);
 }

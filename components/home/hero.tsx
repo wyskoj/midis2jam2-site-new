@@ -16,10 +16,10 @@ export default function Hero() {
 				<Nav onIndexPage={true} />
 				<HeroVideo />
 				<div className={'px-4 drop-shadow-thick-text-shadow'}>
-					<h2 className={`text-4xl md:text-6xl font-black ${sora.className}`}>
+					<h2 className={`text-4xl font-black md:text-6xl ${sora.className}`}>
 						Your favorite songs—animated.
 					</h2>
-					<p className={'text-xl md:text-2xl font-bold'}>
+					<p className={'text-xl font-bold md:text-2xl'}>
 						A remaster of MIDIJam, a 3D MIDI file visualizer.
 					</p>
 				</div>

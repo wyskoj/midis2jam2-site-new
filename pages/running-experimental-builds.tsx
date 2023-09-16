@@ -5,12 +5,12 @@ import React from 'react';
 
 export default function RunningExperimentalBuilds() {
 	return (
-		<main className={'bg-container min-h-screen'}>
+		<main className={'min-h-screen bg-container'}>
 			<Nav onIndexPage={false} />
 
 			<div
 				className={
-					'container p-4 text-white space-y-4 markdown-styles max-w-6xl'
+					'markdown-styles container max-w-6xl space-y-4 p-4 text-white'
 				}
 			>
 				<h1 className={`${sora.className}`}>Running experimental builds</h1>
@@ -28,8 +28,8 @@ export default function RunningExperimentalBuilds() {
 				<ul>
 					<li>
 						The <Link href={'/builds'} text={'builds'} /> page &mdash; Download
-						a build by clicking the "Download JAR" link, then selecting the
-						appropriate file for your operating system.
+						a build by clicking the &quot;Download JAR&quot; link, then
+						selecting the appropriate file for your operating system.
 					</li>
 					<li>
 						Pre-releases from the{' '}
@@ -38,7 +38,7 @@ export default function RunningExperimentalBuilds() {
 							text={'GitHub releases'}
 						/>{' '}
 						page &mdash; Select the appropriate file for your operating system
-						under the "assets" dropdown.
+						under the &quot;assets&quot; dropdown.
 					</li>
 				</ul>
 				<p>
@@ -64,15 +64,20 @@ export default function RunningExperimentalBuilds() {
 				</p>
 				<ol>
 					<li>
-						Using your computer's file explorer, move the previously downloaded
+						Using your computer&apos;s file explorer, move the previously
+						downloaded
 						<code>.jar</code> file to the <code>bin</code> folder located within
 						the extracted JDK folder.
 					</li>
-					<li>Open your computer's terminal/command prompt.</li>
+					<li>Open your computer&apos;s terminal/command prompt.</li>
 					<ul>
-						<li>On Windows, press the Start Button, then search for "cmd".</li>
 						<li>
-							On MacOs and Linux, open the search, then search for "Terminal".
+							On Windows, press the Start Button, then search for
+							&quot;cmd&quot;.
+						</li>
+						<li>
+							On MacOs and Linux, open the search, then search for
+							&quot;Terminal&quot;.
 						</li>
 					</ul>
 					<li>
@@ -85,7 +90,7 @@ export default function RunningExperimentalBuilds() {
 							<br />
 							<code>
 								cd
-								"C:\Users\wysko\Downloads\jdk-17.0.05_windows-x64_bin\jdk-17.0.05\bin"
+								&quot;C:\Users\wysko\Downloads\jdk-17.0.05_windows-x64_bin\jdk-17.0.05\bin&quot;
 							</code>
 							<br />
 							Edit the path used in the this example to the actual path of the

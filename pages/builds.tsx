@@ -6,11 +6,36 @@ import { sora } from '@/pages/_app';
 import React from 'react';
 import { MdError, MdFiberNew, MdSell } from 'react-icons/md';
 
+export type Build = {
+	status: string;
+	commitId: string;
+	buildId: string;
+	branch: string;
+	finished: string;
+	message: string;
+};
+
+type GithubTag = {
+	name: string;
+	commit: {
+		sha: string;
+	};
+};
+
+type FetchData = {
+	appveyor: {
+		builds: Build[];
+	};
+	github: GithubTag[];
+};
+
 export async function getServerSideProps() {
 	const res = await fetch(
 		`https://ci.appveyor.com/api/projects/wyskoj/midis2jam2/history?recordsNumber=999999`,
 	);
-	const appveyor = await res.json();
+	const appveyor: FetchData['appveyor'] =
+		(await res.json()) as FetchData['appveyor'];
+
 	const res2 = await fetch(
 		'https://api.github.com/repos/wyskoj/midis2jam2/tags',
 		{
@@ -20,14 +45,20 @@ export async function getServerSideProps() {
 			}),
 		},
 	);
-	const github = await res2.json();
+	const github: FetchData['github'] =
+		(await res2.json()) as FetchData['github'];
 
-	return { props: { data: { appveyor: appveyor, github: github } } };
+	return { props: { data: { appveyor, github } } };
 }
 
 const ONE_MONTH = 30 * 24 * 60 * 60 * 1000;
 
-function buildBuildRow(build: any, latest: boolean, data: any) {
+function buildBuildRow(
+	build: Build,
+	latest: boolean,
+	data: FetchData,
+	i: number,
+) {
 	let badge;
 	let color;
 
@@ -40,14 +71,14 @@ function buildBuildRow(build: any, latest: boolean, data: any) {
 	}
 
 	// Failed badge
-	let failed = build['status'] === 'failed';
+	const failed = build['status'] === 'failed';
 	if (failed) {
 		badge = <Badge text={'Failed'} icon={MdError} color={'bg-red-800'} />;
 		color = 'bg-red-950';
 	}
 
 	// Tag badge
-	for (let tag of data['github']) {
+	for (const tag of data['github']) {
 		if (tag['commit']['sha'] === build['commitId']) {
 			badge = <Badge text={tag['name']} color={'bg-green-800'} icon={MdSell} />;
 			color = 'bg-green-950';
@@ -76,15 +107,18 @@ function buildBuildRow(build: any, latest: boolean, data: any) {
 		build: build,
 	};
 
-	return <BuildRow {...props} />;
+	return <BuildRow {...props} key={i} />;
 }
 
-export default function Builds({ data }: any) {
-	let tableRows: React.JSX.Element[] = [];
+export default function Builds({ data }: { data: FetchData }) {
+	const tableRows: React.JSX.Element[] = [];
 	let latest = true;
-	let addedSHAs: any[] = [];
+	const addedSHAs: string[] = [];
 
-	for (let build of data['appveyor']['builds']) {
+	for (let i = 0; i < data['appveyor']['builds'].length; i++) {
+		const build = data['appveyor']['builds'][i];
+		if (!build) continue;
+
 		// If already added, skip it
 		if (addedSHAs.find(s => s === build['commitId'])) continue;
 
@@ -93,15 +127,15 @@ export default function Builds({ data }: any) {
 			continue;
 		}
 
-		tableRows.push(buildBuildRow(build, latest, data));
+		tableRows.push(buildBuildRow(build, latest, data, i));
 		latest = false;
 	}
 
 	return (
-		<main className={'bg-container min-h-screen'}>
+		<main className={'min-h-screen bg-container'}>
 			<Nav onIndexPage={false} />
 
-			<div className={'container p-4 text-white space-y-2 overflow-x-auto'}>
+			<div className={'container space-y-2 overflow-x-auto p-4 text-white'}>
 				<h1 className={`text-2xl ${sora.className} font-black`}>Builds</h1>
 				<p>
 					This page lists experimental, developmental builds as they are
@@ -111,7 +145,7 @@ export default function Builds({ data }: any) {
 					<Link href={'/running-experimental-builds'} text={'Learn how'} /> to
 					run experimental builds.
 				</p>
-				<table className={`w-full bg-container-alt min-w-[600px]`}>
+				<table className={`w-full min-w-[600px] bg-container-alt`}>
 					<thead>
 						<tr>
 							<th>Branch</th>

@@ -20,7 +20,7 @@ export function PromoRow(props: PromoRowProps) {
 		>
 			<div className={'lg:w-1/2'}>
 				<h2
-					className={`${sora.className} mb-4 text-3xl md:text-4xl font-extrabold`}
+					className={`${sora.className} mb-4 text-3xl font-extrabold md:text-4xl`}
 				>
 					{props.emoji}&nbsp;{props.title}
 				</h2>

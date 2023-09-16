@@ -124,7 +124,7 @@ const promoRows: PromoRowProps[] = [
 
 export default function Promo() {
 	return (
-		<div className={'space-y-24 py-16 bg-container'}>
+		<div className={'space-y-24 bg-container py-16'}>
 			{promoRows.map((it, i) => {
 				// Alternate row direction
 				return (

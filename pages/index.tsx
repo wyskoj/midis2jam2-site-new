@@ -12,14 +12,15 @@ import {
 } from '@/utils/github';
 
 export async function getServerSideProps() {
+	const auth = process.env['github_auth'] as string;
+
 	const releaseData = await getReleaseDataFromGitHub(
 		midis2jam2Repository,
-		process.env['github_auth']!!,
+		auth,
 	);
 
-	const latestRelease = releaseData?.find(it => !it.prerelease)!!;
+	const latestRelease = releaseData?.find(it => !it.prerelease) as Release;
 	const downloadUrls = getDownloadUrls(latestRelease);
-
 	return { props: { latestRelease, downloadUrls } };
 }
 
