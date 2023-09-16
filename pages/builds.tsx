@@ -85,7 +85,7 @@ export default function Builds({ data }: any) {
 	let addedSHAs: any[] = [];
 
 	for (let build of data['appveyor']['builds']) {
-		// If we've already added this SHA, skip it
+		// If already added, skip it
 		if (addedSHAs.find(s => s === build['commitId'])) continue;
 
 		addedSHAs.push(build['commitId']);
