@@ -1,10 +1,14 @@
 import Link from '@/components/blue-link';
 import { PromoRow, PromoRowProps } from '@/components/promo-row';
-import Screenshot1 from '@/public/gallery/screenshot1.png';
+import Screenshot1 from '@/public/screenshot1.jpg';
+import Screenshot2 from '@/public/screenshot2.jpg';
+import Screenshot3 from '@/public/screenshot3.jpg';
+import Screenshot4 from '@/public/screenshot4.jpg';
+import Screenshot5 from '@/public/screenshot5.jpg';
 
 const promoRows: PromoRowProps[] = [
 	{
-		emoji: '✏️',
+		emoji: '🎶',
 		title: 'Your favorite songs—animated.',
 		image: Screenshot1,
 		alt: 'Screenshot of midis2jam2',
@@ -26,7 +30,7 @@ const promoRows: PromoRowProps[] = [
 	{
 		emoji: '🎥',
 		title: 'View from anywhere.',
-		image: Screenshot1,
+		image: Screenshot3,
 		alt: 'Screenshot of midis2jam2',
 		reversed: false,
 		children: (
@@ -45,7 +49,7 @@ const promoRows: PromoRowProps[] = [
 	{
 		emoji: '🔊',
 		title: 'Listen with your favorite SoundFont.',
-		image: Screenshot1,
+		image: Screenshot2,
 		alt: 'Screenshot of midis2jam2',
 		reversed: false,
 		children: (
@@ -64,7 +68,7 @@ const promoRows: PromoRowProps[] = [
 	{
 		emoji: '🪕',
 		title: 'More instruments than ever before.',
-		image: Screenshot1,
+		image: Screenshot4,
 		alt: 'Screenshot of midis2jam2',
 		reversed: false,
 		children: (
@@ -75,7 +79,7 @@ const promoRows: PromoRowProps[] = [
 						href={
 							'https://github.com/wyskoj/midis2jam2/blob/master/implementation.adoc#implementation-progress'
 						}
-						text={'GM implementation'}
+						text={'GM specification'}
 					/>
 					, allowing every MIDI instrument to be visualized.
 				</p>
@@ -84,8 +88,8 @@ const promoRows: PromoRowProps[] = [
 					on-screen visuals—with more to come with every release.
 				</p>
 				<p>
-					midis2jam2 also has support for animating pitch-bend and modulation
-					effects. Look for these animations on the guitar and space laser.
+					At the present time, midis2jam2 supports the visualization of any
+					instrument 98% of the time.
 				</p>
 			</>
 		),
@@ -93,7 +97,7 @@ const promoRows: PromoRowProps[] = [
 	{
 		emoji: '🖥️',
 		title: 'Free and open-source—forever.',
-		image: Screenshot1,
+		image: Screenshot5,
 		alt: 'Screenshot of midis2jam2',
 		reversed: false,
 		children: (
@@ -120,7 +124,7 @@ const promoRows: PromoRowProps[] = [
 
 export default function Promo() {
 	return (
-		<div className={'space-y-16 py-8'}>
+		<div className={'space-y-24 py-16 bg-container'}>
 			{promoRows.map((it, i) => {
 				// Alternate row direction
 				return <PromoRow {...it} key={i} reversed={i % 2 !== 0} />;

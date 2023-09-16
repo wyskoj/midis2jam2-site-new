@@ -2,7 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 ul {
     list-style-type: disc;
     margin-left: 1.5rem;
+}
+
+.markdown-styles > h1 {
+    font-weight: 900;
+    font-size: 1.25rem;
+}
+
+td, th {
+    padding: 1em;
+}
+
+tr {
+    border-bottom: 1px solid #333;
 }

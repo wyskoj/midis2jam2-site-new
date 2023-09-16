@@ -17,12 +17,15 @@ export default function Link(props: LinkParams) {
 	return (
 		<NextLink
 			href={props.href}
-			className={'text-blue-400'}
+			className={'text-blue-400 hover:underline'}
 			target={props.href.startsWith('http') ? '_blank' : undefined}
 		>
-			{props.text}{' '}
+			{props.text}
 			{props.href.startsWith('http') ? (
-				<BiLinkExternal className={'inline'} />
+				<>
+					&nbsp;
+					<BiLinkExternal className={'inline '} />
+				</>
 			) : null}
 		</NextLink>
 	);

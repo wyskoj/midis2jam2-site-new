@@ -19,13 +19,23 @@ export function PromoRow(props: PromoRowProps) {
 			}`}
 		>
 			<div className={'lg:w-1/2'}>
-				<h2 className={`${sora.className} mb-4 text-4xl font-extrabold`}>
+				<h2
+					className={`${sora.className} mb-4 text-3xl md:text-4xl font-extrabold`}
+				>
 					{props.emoji}&nbsp;{props.title}
 				</h2>
-				<div className={'space-y-6 text-xl leading-8'}>{props.children}</div>
+				<div className={'space-y-6 text-lg md:text-xl md:leading-8'}>
+					{props.children}
+				</div>
 			</div>
 			<div className={'lg:w-1/2'}>
-				<Image src={props.image} alt={props.alt} className={'rounded-2xl'} />
+				<Image
+					src={props.image}
+					alt={props.alt}
+					className={'rounded-2xl drop-shadow-lg'}
+					height={368}
+					width={736}
+				/>
 			</div>
 		</div>
 	);
