@@ -7,5 +7,13 @@ L
 .idea/codeStyles/Project.xml,6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648
 >
 next.config.js,8/1/811a6d5a2e04fadb44d8eec365f2fa8af5c4facf
-4
-.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+9
+	yarn.lock,5\3\53585a096fe3a3b96321113856ae62602995a33b
+E
+components/footer.tsx,6\5\65557999643c02d30b5ee529deff48b6bf8fe442
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a

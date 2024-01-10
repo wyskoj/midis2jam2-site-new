@@ -27,12 +27,12 @@ export default function Footer() {
 				</div>
 				<div className={'text-center text-xs md:w-1/2  md:text-left'}>
 					<p>
-						Site &copy; MMXXI–MMXXIII{' '}
+						Site &copy; MMXXI–MMXXIV{' '}
 						<Link href={'https://wysko.org'} text={'Jacob Wysko'} />. All Rights
 						Reserved.
 					</p>
 					<p>
-						midis2jam2 &copy; MMXXI–MMXXIII Jacob Wysko. Released under the{' '}
+						midis2jam2 &copy; MMXXI–MMXXIV Jacob Wysko. Released under the{' '}
 						<Link
 							href={'https://www.gnu.org/licenses/gpl.html'}
 							text={'GNU General Public License 3'}
