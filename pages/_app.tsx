@@ -23,7 +23,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<div className={`${inter.className}`}>
+		<div className={inter.className}>
 			<AnimatePresence
 				onExitComplete={() => {
 					window.scrollTo(0, 0);

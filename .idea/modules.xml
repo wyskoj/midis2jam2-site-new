@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../midis2jam2-site-new.iml" filepath="$PROJECT_DIR$/../midis2jam2-site-new.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/midis2jam2-site-new.iml" filepath="$PROJECT_DIR$/.idea/midis2jam2-site-new.iml" />
     </modules>
   </component>
 </project>

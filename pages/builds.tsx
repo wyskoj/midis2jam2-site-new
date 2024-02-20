@@ -59,8 +59,8 @@ function buildBuildRow(
 	data: FetchData,
 	i: number,
 ) {
-	let badge;
-	let color;
+	let badge: React.JSX.Element | undefined;
+	let color: string | undefined;
 
 	// Latest badge
 	if (latest) {

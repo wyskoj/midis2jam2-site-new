@@ -13,7 +13,7 @@ export default function RunningExperimentalBuilds() {
 					'markdown-styles container max-w-6xl space-y-4 p-4 text-white'
 				}
 			>
-				<h1 className={`${sora.className}`}>Running experimental builds</h1>
+				<h1 className={sora.className}>Running experimental builds</h1>
 				<p>
 					This page shows you how to run experimental builds of midis2jam2. You
 					can use experimental builds to test features of midis2jam2 that are
